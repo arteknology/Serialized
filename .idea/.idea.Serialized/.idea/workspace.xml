@@ -13,6 +13,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11BD515F-D2A0-4526-8509-D23726DE0F46/ae/19e7e3d7/Path.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../VisualNovel/Assets/Scripts/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -22,6 +23,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CharacterMono.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DataHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CubeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CharacterController.cs" />
       </list>
     </option>
   </component>
@@ -66,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602229292088</updated>
       <workItem from="1602229294267" duration="6967000" />
-      <workItem from="1602237508720" duration="2875000" />
+      <workItem from="1602237508720" duration="7311000" />
     </task>
     <servers />
   </component>
