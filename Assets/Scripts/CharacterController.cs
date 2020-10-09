@@ -21,6 +21,7 @@ public class CharacterController : MonoBehaviour
 
     private void Save()
     {
+        Character.Position = transform.position;
         DataHandler.Save(UnityDirectory.StreamingAssetPath, Character, Character.Name);
     }
     
@@ -31,6 +32,7 @@ public class CharacterController : MonoBehaviour
         Xp = Character.Xp;
         Pv = Character.Pv;
         nameText.text = Character.Name + " Xp: "+Xp;
+        transform.position = Character.Position;
     }
 
     public void Update()
