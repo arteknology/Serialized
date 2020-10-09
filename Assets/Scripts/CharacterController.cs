@@ -6,41 +6,33 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
-    public Character Character = new Character();
+    public Character Character;
     public Text nameText;
-    public int Level;
-    public int Xp;
-    public int Pv;
-
-    private void Start()
-    {
-        Level = 0;
-        Xp = 0;
-        Pv = 0;
-    }
+    public InputField InputField;
 
     private void Save()
     {
-        Character.Position = transform.position;
+        Character = new Character
+        {
+            Position = transform.position,
+            Name = InputField.text
+        };
         DataHandler.Save(UnityDirectory.StreamingAssetPath, Character, Character.Name);
     }
     
     private void Load()
     { 
-        DataHandler.Load<Character>(UnityDirectory.StreamingAssetPath, Character.Name);
-        Level = Character.Level;
-        Xp = Character.Xp;
-        Pv = Character.Pv;
-        nameText.text = Character.Name + " Xp: "+Xp;
+        Character = DataHandler.Load<Character>(UnityDirectory.StreamingAssetPath, InputField.text);
+        nameText.text = Character.Name + " Xp: "+Character.Xp;
         transform.position = Character.Position;
     }
 
     public void Update()
     {
-        if (Input.GetButtonDown("Jump")) Save();
-        else if (Input.GetButtonDown("Horizontal")) Load();
+        if (Input.GetButtonDown("Fire2")) Save();
+        else if (Input.GetButtonDown("Fire3")) Load();
         
-        if (Input.GetButtonDown("Vertical"))
+        if (Input.GetButtonDown("Jump"))
         {
             Character.GainXp();
         }
@@ -50,12 +42,7 @@ public class CharacterController : MonoBehaviour
 [Serializable]
 public class Character
 {
-    [SerializeField] private InputField _inputField;
-    public string Name
-    {
-        get => _inputField.text;
-        set => _inputField.text = value;
-    }
+    public string Name;
 
     public int Xp;
     public int Level;

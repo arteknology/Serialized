@@ -61,9 +61,7 @@ public static class DataHandler
         //Close the streamWriter
         streamReader.Close();
         //Convert le json en data
-        JsonUtility.FromJson<T>(jsonData);
-
-        return default;
+        return JsonUtility.FromJson<T>(jsonData);
     }
 
     private static string GetDirectory(UnityDirectory unityDirectory)
